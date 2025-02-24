@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.video-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  height: 108vh; 
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {  /* Tablets */
+  .video-overlay {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+  }
+}
+
+@media (max-width: 768px) {  /* Mobile Devices */
+  .video-overlay {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+  }
+}
+
+
+.nav-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.property-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.property-card:hover {
+  transform: scale(1.02);
+}
+
+.react-player {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 177.77777778vh !important;
+  height: 56.25vw !important;
+}
+
+
+
+@media (max-aspect-ratio: 16/9) {
+  .react-player {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
